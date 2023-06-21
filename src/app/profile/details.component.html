@@ -1,0 +1,7 @@
+﻿<link rel="stylesheet" href="C:\Users\Ceere\Documents\omni-projects\template\src\styles.less">
+<h1>My Profile</h1>
+<p *ngIf="account">
+    <strong>Name: </strong> {{account.title}} {{account.firstName}} {{account.lastName}}<br />
+    <strong>Email: </strong> {{account.email}}
+</p>
+<p><a routerLink="update">Update Profile</a></p>
