@@ -1,9 +1,9 @@
-export interface weatherData {
-    location: Location
-    current: Current
+export interface IweatherData {
+    location: ILocation
+    current: ICurrent
   }
   
-  export interface Location {
+  export interface ILocation {
     name: string
     region: string
     country: string
@@ -14,13 +14,13 @@ export interface weatherData {
     localtime: string
   }
   
-  export interface Current {
+  export interface ICurrent {
     last_updated_epoch: number
     last_updated: string
     temp_c: number
     temp_f: number
     is_day: number
-    condition: Condition
+    condition: ICondition
     wind_mph: number
     wind_kph: number
     wind_degree: number
@@ -40,7 +40,7 @@ export interface weatherData {
     gust_kph: number
   }
   
-  export interface Condition {
+  export interface ICondition {
     text: string
     icon: string
     code: number
