@@ -7,40 +7,42 @@ import { HttpClient } from '@angular/common/http';
 
 import { WeatherService } from '@app/_services';
 
-import { weatherData } from '@app/_models';
+import { IweatherData } from '@app/_models';
 
 @Component({ 
   selector:'app-home',
   templateUrl: 'home.component.html',
-  styleUrls: ['./home.component.css'],
-  encapsulation: ViewEncapsulation.None })
+  styleUrls: [ './home.component.css'],
+  encapsulation: ViewEncapsulation.None 
+})
 
 export class HomeComponent {
-  cityName: string = 'Nairobi';
-  
-  weatherData?: weatherData;
 
-  constructor(private http: HttpClient, private weatherService: WeatherService) { }
+  constructor(private http: HttpClient, private weatherService: WeatherService) {}
+   
+  cityName:string = 'Nairobi';
+  
+  IweatherData?: IweatherData;
 
   ngOnInit(): void {
     this.getWeatherData(this.cityName);
-    this.cityName = ' ';
+    this.cityName = '';
   }
-
-  onSubmit(event:any) {
-    this.getWeatherData(event.target[0].value);
-    this.cityName = ' ';
-    console.log(event.target[0].value)
+  
+  onSubmit() {
+    this.getWeatherData(this.cityName);
+    this.cityName = '';
     }
-    
 
-  getWeatherData(cityName: string) {
+  private getWeatherData(cityName: string) {
     this.weatherService.getWeatherData(cityName)
-      .subscribe((response: weatherData) => {
-        this.weatherData = response;
+    .subscribe({
+      next:(response) => {
+        this.IweatherData = response;
         console.log(response);
-        });
-      
+      }
+      });
     }
+
      
 }
