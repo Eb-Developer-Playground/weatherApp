@@ -166,8 +166,10 @@ body {
 }
 
 .search {
-  margin-bottom: 1em;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .search input {
