@@ -17,7 +17,7 @@ export class WeatherService {
       .set(environment.XRapidAPIHostHeaderName, environment.XRapidAPIHostHeaderValue)
       .set(environment.XRapidAPIKeyHeaderName, environment.XRapidAPIKeyHeaderValue),
       params: new HttpParams()
-      .set('q', cityName)
+      .set('city', cityName)
       .set('units', 'metric')
       .set('mode', 'json')
     })
