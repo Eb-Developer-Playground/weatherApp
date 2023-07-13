@@ -35,14 +35,12 @@ export class HomeComponent {
     }
 
   private getWeatherData(cityName: string) {
-    this.weatherService.getWeatherData(cityName)
-    .subscribe({
+    this.weatherService.getWeatherData(cityName).subscribe({
       next:(response) => {
         this.IweatherData = response;
         console.log(response);
       }
       });
     }
-
-     
+    ;   
 }
