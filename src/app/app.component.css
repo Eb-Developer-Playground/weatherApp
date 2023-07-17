@@ -28,16 +28,23 @@
     margin-right: 900px;
     
  }
+ 
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
   
   .navbar-brand {
     display: flex;
     align-items: center;
   }
   
+  
   .menu-icon {
     font-size: 20px;
     cursor: pointer;
-    margin-left: 10px;
+    height: auto;
+    margin-right: 10px;
   }
   
   .navbar-nav {
@@ -71,11 +78,49 @@
       margin-bottom: 10px;
     }
   }
-  
-  
-  
 
-  
-  
+  /* Add your desired styles for the dropdown menu here */
 
-
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    height: calc(100vh - 100%);
+    float: left;
+    min-width: 20rem;
+    width: auto;
+    padding: 0.5rem 0;
+    margin: 0.125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    background-color: var(--grey);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+  }
+  
+  .dropdown-menu.show {
+    display: block;
+  }
+  
+  .dropdown-item {
+    display: block;
+    padding: 0.25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+  }
+  
+  .dropdown-item:hover,
+  .dropdown-item:focus {
+    color: #16181b;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
