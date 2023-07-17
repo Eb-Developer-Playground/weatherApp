@@ -29,6 +29,50 @@
     
  }
   
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu-icon {
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .navbar-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-item {
+    margin-right: 10px;
+  }
+  
+  .nav-link {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-nav {
+      display: none;
+    }
+  
+    .navbar.open .navbar-nav {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .navbar.open .nav-item {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+  
+  
   
 
   
