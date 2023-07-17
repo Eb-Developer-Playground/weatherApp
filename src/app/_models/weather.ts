@@ -1,53 +1,47 @@
 export interface IweatherData {
-  base: string
-  clouds: IClouds
-  cod: number
-  coord: ICoord
-  dt: number
-  id: number
-  main: IMain
-  name: string
-  sys: ISys
-  timezone: number
-  visibility: number
-  weather: IWeather[]
-  wind: IWind
+  location: ILocation;
+  current: ICurrent;
 }
 
-export interface IClouds {
-  all: number
+export interface ILocation {
+  name: string;
+  region: string;
+  country: string;
+  lat: number;
+  lon: number;
+  tz_id: string;
+  localtime_epoch: number;
+  localtime: string;
 }
 
-export interface ICoord {
-  lat: number
-  lon: number
+export interface ICurrent {
+  last_updated_epoch: number;
+  last_updated: string;
+  temp_c: number;
+  temp_f: number;
+  is_day: number;
+  condition: ICondition;
+  wind_mph: number;
+  wind_kph: number;
+  wind_degree: number;
+  wind_dir: string;
+  pressure_mb: number;
+  pressure_in: number;
+  precip_mm: number;
+  precip_in: number;
+  humidity: number;
+  cloud: number;
+  feelslike_c: number;
+  feelslike_f: number;
+  vis_km: number;
+  vis_miles: number;
+  uv: number;
+  gust_mph: number;
+  gust_kph: number;
 }
 
-export interface IMain {
-  feels_like: number
-  humidity: number
-  pressure: number
-  temp: number
-  temp_max: number
-  temp_min: number
-}
-
-export interface ISys {
-  country: string
-  id: number
-  sunrise: number
-  sunset: number
-  type: number
-}
-
-export interface IWeather {
-  description: string
-  icon: string
-  id: number
-  main: string
-}
-
-export interface IWind {
-  deg: number
-  speed: number
+export interface ICondition {
+  text: string;
+  icon: string;
+  code: number;
 }
