@@ -35,6 +35,19 @@ body {
   justify-content: center;
   align-items: center;
 }
+.left-section,
+.right-section {
+  position: fixed;
+  top: 0;
+  width: 20%;
+  height: 100%;
+  z-index: 1;
+}
+
+.left-section {
+  left: 0;
+  background-color: navy;
+}
 
 .home-container {
   width: 600px;
@@ -133,9 +146,6 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-
-  
-
   
 }
 
@@ -186,7 +196,7 @@ body {
   color: var(--black); 
 }
 
-.footer {
+/* .footer {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -200,4 +210,4 @@ body {
   color: var(--grey);
   font-weight: bold;
   font-size: 0.8em;
-}
+} */
