@@ -22,4 +22,10 @@ export class AppComponent {
   logout() {
     this.accountService.logout();
   }
+ 
+  isDropdownOpen = false;
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
+
 }
