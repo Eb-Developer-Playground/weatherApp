@@ -1,13 +1,25 @@
 ﻿<nav class="navbar navbar-expand navbar-dark bg-dark px-3 fixed-top thin-navbar" *ngIf="account">
         <div class="navbar-brand">
-            <span class="menu-icon">&#9776;</span>
+            <span class="menu-icon" (click)="toggleDropdown()">&#9776;</span>
             <img src="\assets\logo.png" alt="Logo" class="navbar-logo">
+          </div>
+          <div class="collapse navbar-collapse" [ngClass]="{'show': isDropdownOpen}">
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown" [ngClass]="{'show': isDropdownOpen}">
+                <a class="dropdown-item" href="#">Dropdown Item 1</a>
+                <a class="dropdown-item" href="#">Dropdown Item 2</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Dropdown Item 3</a>
+              </div>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"></li>
+            </ul>
           </div>
         <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-item nav-link">Home</a>
         <a routerLink="/profile" routerLinkActive="active" class="nav-item nav-link">Profile</a>
         <a *ngIf="account.role === Role.Admin" routerLink="/admin" routerLinkActive="active" class="nav-item nav-link">Admin</a>
-        <button (click)="logout()" class="btn btn-link nav-item nav-link">Logout</button> 
+        <button (click)="logout()" class="btn btn-link nav-item nav-link">Logout</button>
 </nav>
+
 
 
 <router-outlet name="subnav"></router-outlet>
