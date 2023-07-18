@@ -1,14 +1,20 @@
-﻿<nav class="navbar navbar-expand navbar-dark bg-dark px-3 fixed-top thin-navbar" *ngIf="account">
+﻿<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+<nav class="navbar navbar-expand navbar-dark bg-dark px-3 fixed-top thin-navbar" *ngIf="account">
         <div class="navbar-brand">
             <span class="menu-icon" (click)="toggleDropdown()">&#9776;</span>
             <img src="\assets\logo.png" alt="Logo" class="navbar-logo">
           </div>
           <div class="collapse navbar-collapse" [ngClass]="{'show': isDropdownOpen}">
             <div class="dropdown-menu" aria-labelledby="navbarDropdown" [ngClass]="{'show': isDropdownOpen}">
-                <a class="dropdown-item" href="#">Dropdown Item 1</a>
-                <a class="dropdown-item" href="#">Dropdown Item 2</a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-user"></i> Profile
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-cog"></i> Forecast</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Dropdown Item 3</a>
+                <a class="dropdown-item logout-link" href="#">
+                  <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
               </div>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"></li>
@@ -19,6 +25,7 @@
         <a *ngIf="account.role === Role.Admin" routerLink="/admin" routerLinkActive="active" class="nav-item nav-link">Admin</a>
         <button (click)="logout()" class="btn btn-link nav-item nav-link">Logout</button>
 </nav>
+
 
 
 
