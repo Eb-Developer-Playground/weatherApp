@@ -1,14 +1,19 @@
 ﻿
 <div class="search">
     <form #form="ngForm" (submit)="onSubmit()">
-        <input type="text" placeholder= "Search city" name="city" [(ngModel)]="cityName" >
+      <div class="search-container">
+        <div class="input-container">
+          <input type="text" placeholder="Search city" name="city" [(ngModel)]="cityName">
+          <input type="date" id="dateInput" [(ngModel)]="selectedDate">
+        </div>
+        <!-- Move the "Get Weather" button here -->
+        <!-- <button type="button" (click)="getWeatherForSelectedDate()">Get Weather</button> -->
+      </div>
     </form>
-</div>
-<section class="left-section">
-    <home-navbar></home-navbar>
-  </section>
+  </div>
   
 <div class="home-container" *ngIf="IweatherData">
+    
     <!-- Weather data section -->
     <div class="upper-data">
         <img src="../assets/hot.jpg"*ngIf="IweatherData.current.temp_c > 15">
@@ -72,3 +77,11 @@
         </div>
     </div>
 </div>
+
+
+<!-- Existing code -->
+<app-forecast [cityName]="cityName"></app-forecast>
+
+<app-forecast [IweatherData]="IweatherData"></app-forecast>
+
+
