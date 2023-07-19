@@ -16,6 +16,8 @@ import { JwtInterceptor, ErrorInterceptor, appInitializer } from './_helpers';
 import { AccountService } from './_services';
 import { AppComponent } from './app.component';
 import { AlertComponent } from './_components';
+import { ForecastComponent } from './forecast/forecast.component';
+
 
 @NgModule({
     imports: [
@@ -25,15 +27,20 @@ import { AlertComponent } from './_components';
         HttpClientModule,
         RouterModule,
         AppRoutingModule,
-        FormsModule
+        FormsModule,
+        
 
     ],
     declarations: [
         AlertComponent,
         HomeComponent,
-        AppComponent
-
+        AppComponent,
+        ForecastComponent,
     ],
+    exports: [
+        ForecastComponent,
+      ],
+      
     providers: [
         { provide: APP_INITIALIZER, useFactory: appInitializer, multi: true, deps: [AccountService] },
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
