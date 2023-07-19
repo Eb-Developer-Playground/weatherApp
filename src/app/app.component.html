@@ -21,7 +21,7 @@
               </a>
                 
 
-                <a class = 'dropdown-item' href =#>
+                <a class = 'dropdown-item' href =# (click)="toggleForecast()">
                   <i class="fas fa-cloud"></i> Forecast
                 </a>
 
@@ -47,6 +47,8 @@
 </nav>
 
 
+<app-forecast *ngIf="isForecastVisible" [isVisible]="isForecastVisible"></app-forecast>
+<!-- Existing code -->
 
 
 <router-outlet name="subnav"></router-outlet>
