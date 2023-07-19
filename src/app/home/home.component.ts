@@ -1,13 +1,13 @@
 ﻿import { Component } from '@angular/core';
 
-
 import { ViewEncapsulation } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 
 import { WeatherService } from '@app/_services';
 
-import { IweatherData } from '@app/_models';
+
+import { IweatherData,iForecastday } from '@app/_models';
 
 @Component({ 
   selector:'home',
@@ -24,23 +24,42 @@ export class HomeComponent {
   
   IweatherData?: IweatherData;
 
+  selectedDate: string = '';
+
+  forecastData?: iForecastday[];
+
+
+
   ngOnInit(): void {
     this.getWeatherData(this.cityName);
     this.cityName = '';
+
   }
   
-  onSubmit() {
-    this.getWeatherData(this.cityName);
-    this.cityName = '';
+    onSubmit() {
+      if (this.cityName && this.selectedDate) {
+        this.getWeatherData(this.cityName);
+        this.cityName = '';
+        // this.selectedDate = '';
+      } 
     }
+    
 
-  private getWeatherData(cityName: string) {
-    this.weatherService.getWeatherData(cityName).subscribe({
-      next:(response) => {
-        this.IweatherData = response;
-        console.log(response);
-      }
+    private getWeatherData(cityName: string, date?: string) {
+      const request = date ? this.weatherService.getWeatherData(date) : this.weatherService.getWeatherData(cityName);
+      request.subscribe({
+        next:(response) => {
+          this.IweatherData = response;
+          console.log(response);
+        }
       });
     }
-    ;   
-}
+
+    onDateChange() {
+      if (this.selectedDate) {
+        this.getWeatherData(this.cityName, this.selectedDate);
+      }
+    }
+  }
+
+  
