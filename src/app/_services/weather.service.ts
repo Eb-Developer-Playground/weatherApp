@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { IweatherData } from '@app/_models';
+import { IweatherData,iForecast } from '@app/_models';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,6 @@ export class WeatherService {
       .set('q', cityName)
       .set('units', 'metric')
       .set('mode', 'json')
-      
     })
   }
   }
