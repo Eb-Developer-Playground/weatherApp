@@ -16,7 +16,6 @@ import { JwtInterceptor, ErrorInterceptor, appInitializer } from './_helpers';
 import { AccountService } from './_services';
 import { AppComponent } from './app.component';
 import { AlertComponent } from './_components';
-import { ForecastComponent } from './forecast/forecast.component';
 
 
 @NgModule({
@@ -35,10 +34,8 @@ import { ForecastComponent } from './forecast/forecast.component';
         AlertComponent,
         HomeComponent,
         AppComponent,
-        ForecastComponent,
     ],
     exports: [
-        ForecastComponent,
       ],
       
     providers: [
