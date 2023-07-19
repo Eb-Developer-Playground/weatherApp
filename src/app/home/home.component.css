@@ -35,19 +35,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-.left-section,
-.right-section {
-  position: fixed;
-  top: 0;
-  width: 26%;
-  height: 100%;
-  z-index: 1;
-}
-
-.left-section {
-  left: 0;
-  background-color: navy;
-}
 
 
 .home-container {
@@ -186,6 +173,7 @@ body {
   background-color: var(--grey);
   outline: none;
   border: none;
+  margin-right: 10px;
   border-radius: 20px;
   padding: 1em;
   color: var(--black);
@@ -196,18 +184,11 @@ body {
   color: var(--black); 
 }
 
-/* .footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+.forecast-date-input{
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 1em;
-  background-color: var(--black);
-  color: var(--grey);
-  font-weight: bold;
-  font-size: 0.8em;
-} */
+  margin-bottom: 20px;
+}
+/* .forecast-date-input button {
+  margin-top: 10px; */
