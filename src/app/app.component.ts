@@ -1,4 +1,4 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import { Component, HostListener, ElementRef, ViewChild } from '@angular/core';
 
 import { AccountService } from './_services';
 import { Account, Role } from './_models';
@@ -27,5 +27,15 @@ export class AppComponent {
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;
   }
+
+  isForecastVisible: boolean = false;
+
+  toggleForecast() {
+    this.isForecastVisible = !this.isForecastVisible;
+  }
+  
+  
+
+  
 
 }
