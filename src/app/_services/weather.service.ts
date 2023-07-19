@@ -14,12 +14,14 @@ export class WeatherService {
   getWeatherData(cityName: string): Observable<IweatherData> {
     return this.http.get<IweatherData>(environment.weatherApiBaseUrl, {
       headers: new HttpHeaders()
-      .set(environment.XRapidAPIHostHeaderName, environment.XRapidAPIHostHeaderValue)
-      .set(environment.XRapidAPIKeyHeaderName, environment.XRapidAPIKeyHeaderValue),
+      .set(environment.weatherApiXRapidAPIHostHeaderName, environment.weatherApiXRapidAPIHostHeaderValue)
+      .set(environment.weatherApiXRapidAPIKeyHeaderName, environment.weatherApiXRapidAPIKeyHeaderValue),
       params: new HttpParams()
       .set('q', cityName)
       .set('units', 'metric')
       .set('mode', 'json')
+      
     })
   }
-}
+  }
+
