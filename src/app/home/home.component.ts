@@ -40,7 +40,7 @@ export class HomeComponent {
       if (this.cityName && this.selectedDate) {
         this.getWeatherData(this.cityName);
         this.cityName = '';
-        // this.selectedDate = '';
+        this.selectedDate = '';
       } 
     }
     
