@@ -12,13 +12,14 @@ const profileModule = () => import('./profile/profile.module').then(x => x.Profi
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent },
-    { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+    { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'account', loadChildren: accountModule },
     { path: 'profile', loadChildren: profileModule, canActivate: [AuthGuard] },
     { path: 'admin', loadChildren: adminModule, canActivate: [AuthGuard], data: { roles: [Role.Admin] } },
 
-    // otherwise redirect to home
-    { path: '**', redirectTo: '' }
+    // otherwise redirect to home(unrecognised routes)
+    { path: '', redirectTo: 'home', pathMatch: "full" },
+    { path: '**', redirectTo: ' ' }
 ];
 
 @NgModule({
