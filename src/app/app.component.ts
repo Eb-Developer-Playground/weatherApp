@@ -27,6 +27,7 @@ export class AppComponent {
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;
   }
+  
 
   isForecastVisible: boolean = false;
 

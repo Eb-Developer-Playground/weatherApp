@@ -16,6 +16,7 @@ import { JwtInterceptor, ErrorInterceptor, appInitializer } from './_helpers';
 import { AccountService } from './_services';
 import { AppComponent } from './app.component';
 import { AlertComponent } from './_components';
+import { LoginComponent } from './account/login.component';
 
 
 @NgModule({

@@ -55,7 +55,7 @@ export class HomeComponent {
       });
     }
 
-    onDateChange() {
+    onDateChange(date?:string) {
       if (this.selectedDate) {
         this.getWeatherData(this.cityName, this.selectedDate);
       }
