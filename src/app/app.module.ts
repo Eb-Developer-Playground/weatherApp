@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule }   from '@angular/forms';
 import { WeatherService } from '@app/_services';
-import { HomeComponent } from './home';
+import { HomeComponent } from './home'; 
 
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers';
