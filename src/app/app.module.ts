@@ -29,8 +29,6 @@ import { HomeModule } from './home/home.module';
         AppRoutingModule,
         FormsModule,
         HomeModule
-        
-
     ],
     declarations: [
         AlertComponent,
